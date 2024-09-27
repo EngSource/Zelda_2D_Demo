@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://chcvakph00sa4"]
+[gd_scene load_steps=10 format=4 uid="uid://chcvakph00sa4"]
 
 [ext_resource type="Texture2D" uid="uid://cg3mvnn8272go" path="res://Assets/Sprites/Backgrounds/Tilesets/TilesetFloor.png" id="1_i7ykd"]
 [ext_resource type="TileSet" uid="uid://d0u5upkg2ewun" path="res://Scenes/TileSets.tres" id="1_q772w"]
 [ext_resource type="Texture2D" uid="uid://bu1l1loeu0xpt" path="res://Assets/Sprites/Backgrounds/Tilesets/TilesetField.png" id="2_075sa"]
 [ext_resource type="PackedScene" uid="uid://c18t4hh8r7saq" path="res://Scenes/player.tscn" id="4_nj8gj"]
+[ext_resource type="PackedScene" uid="uid://dqt4v13e36ikp" path="res://Scenes/pickup_item.tscn" id="5_qajdj"]
+[ext_resource type="Resource" uid="uid://co46idg1rptkn" path="res://Resources/gold_coin.tres" id="6_0wvni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1khde"]
 texture = ExtResource("1_i7ykd")
@@ -640,3 +642,8 @@ tile_set = ExtResource("1_q772w")
 [node name="player" parent="." instance=ExtResource("4_nj8gj")]
 z_index = 5
 position = Vector2(-331, 72)
+
+[node name="PIckUpItem" parent="." instance=ExtResource("5_qajdj")]
+z_index = 5
+position = Vector2(-298, 75)
+inventory_item = ExtResource("6_0wvni")

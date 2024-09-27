@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c18t4hh8r7saq"]
+[gd_scene load_steps=27 format=3 uid="uid://c18t4hh8r7saq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qnc3u"]
 [ext_resource type="Texture2D" uid="uid://cnxrwtexeon2o" path="res://Assets/Sprites/Actor/Characters/WhiteFighter/SpriteSheet.png" id="1_r57vi"]
@@ -109,7 +109,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"back_walk",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"front_walk",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,7 +159,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_walk",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,18 +184,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_walk",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efi4q"]
 radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_756dl"]
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_qnc3u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fpol0")
-animation = &"right_walk"
+animation = &"left_walk"
 autoplay = "front_idle"
 script = ExtResource("3_8ops5")
 
@@ -205,3 +207,8 @@ shape = SubResource("CircleShape2D_efi4q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_756dl")
