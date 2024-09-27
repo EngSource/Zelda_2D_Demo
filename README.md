@@ -1,2 +1,2 @@
-# Zelda_2D_Demo
+# ZeldaDemo2D
 2D Zelda Demo created in GODOT4.3
